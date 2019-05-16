@@ -11,19 +11,19 @@ class Board extends Component {
   renderSquare(i) {
     return (
       <Square
-        handleClick={this.handleSquareClick}
+        handleClick={() => this.handleClick(i)}
         value={this.state.squares[i]}
       />
     );
   }
 
-  handleSquareClick = i => {
-    console.log(`Square ${i} was clicked`);
+  handleClick = i => {
     const squares = this.state.squares.slice();
-    squares[i] = "X";
+    squares[i] = this.props.turn;
     this.setState({
       squares: squares
     });
+    this.props.switch();
   };
 
   render() {
