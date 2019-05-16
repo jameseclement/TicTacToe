@@ -27,7 +27,7 @@ class Board extends Component {
   };
 
   render() {
-    const status = "Next player: X";
+    const status = `Next player: ${this.props.turn}`;
 
     return (
       <div>
