@@ -43,16 +43,26 @@ class Board extends Component {
 
   handleClick = i => {
     const squares = this.state.squares.slice();
-    squares[i] = this.props.turn;
-    this.setState({
-      squares: squares
-    });
-    this.props.switch();
+    if (this.calculateWinner(squares) || squares[i]) {
+      return;
+    } else {
+      squares[i] = this.props.turn;
+      this.setState({
+        squares: squares
+      });
+      this.props.switch();
+    }
   };
 
   render() {
-    const status = `Next player: ${this.props.turn}`;
     const winner = this.calculateWinner(this.state.squares);
+    let status;
+    if (winner) {
+      status = `${winner} is the Winner!`;
+    } else {
+      status = `Next player: ${this.props.turn}`;
+    }
+
     return (
       <div>
         <div className="status">{status}</div>
