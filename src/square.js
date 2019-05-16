@@ -9,18 +9,13 @@ class Square extends Component {
     };
   }
 
-  handleClick = marker => {
-    this.setState({
-      value: marker
-    });
-  };
   render() {
     return (
       <button
-        onClick={() => this.handleClick(this.props.turn)}
+        onClick={() => this.props.handleClick(this.props.value)}
         className="square"
       >
-        {this.state.value}
+        {this.props.value}
       </button>
     );
   }
