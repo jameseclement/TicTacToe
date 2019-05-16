@@ -2,11 +2,17 @@ import React, { Component } from "react";
 import Board from "./board";
 
 class Game extends Component {
+  constructor() {
+    super();
+    this.state = {
+      turn: "0"
+    };
+  }
   render() {
     return (
       <div className="game">
         <div className="game-board">
-          <Board />
+          <Board turn={this.state.turn} />
         </div>
         <div className="game-info">
           <div />

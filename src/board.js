@@ -3,7 +3,7 @@ import Square from "./square";
 
 class Board extends Component {
   renderSquare(i) {
-    return <Square value={i} />;
+    return <Square turn={this.props.turn} value={i} />;
   }
 
   render() {
