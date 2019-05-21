@@ -20,13 +20,26 @@ class Game extends Component {
       : this.setState({ turn: "X" });
   };
   render() {
+    const history = this.state.history;
+    const board = history[history.length - 1];
+    const winner = this.calculateWinner(this.board);
+    let status;
+    if (winner) {
+      status = `${winner} is the Winner!`;
+    } else {
+      status = `Next player: ${this.props.turn}`;
+    }
     return (
       <div className="game">
         <div className="game-board">
-          <Board turn={this.state.turn} switch={this.switchTurn} />
+          <Board
+            turn={this.state.turn}
+            switch={this.switchTurn}
+            board={board}
+          />
         </div>
         <div className="game-info">
-          <div />
+          <div>{status}</div>
           <ol />
         </div>
       </div>
