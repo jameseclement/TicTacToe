@@ -5,7 +5,12 @@ class Game extends Component {
   constructor() {
     super();
     this.state = {
-      turn: "X"
+      turn: "X",
+      history: [
+        {
+          squares: [null, null, null, null, null, null, null, null, null]
+        }
+      ]
     };
   }
 
