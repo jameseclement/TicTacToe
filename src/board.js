@@ -2,17 +2,11 @@ import React, { Component } from "react";
 import Square from "./square";
 
 class Board extends Component {
-  constructor() {
-    super();
-    this.state = {
-      squares: [null, null, null, null, null, null, null, null, null]
-    };
-  }
   renderSquare(i) {
     return (
       <Square
         handleClick={() => this.props.handleClick(i)}
-        value={this.state.squares[i]}
+        value={this.props.squares[i]}
       />
     );
   }
