@@ -31,7 +31,7 @@ class Game extends Component {
       this.setState({
         squares: squares
       });
-      this.props.switch();
+      this.switchTurn();
     }
   };
 
