@@ -29,7 +29,7 @@ class Game extends Component {
     } else {
       squares[i] = this.props.turn;
       this.setState({
-        squares: squares
+        history: [...history, { squares: squares }]
       });
       this.switchTurn();
     }
@@ -75,7 +75,7 @@ class Game extends Component {
           <Board
             turn={this.state.turn}
             switch={this.switchTurn}
-            board={board}
+            squares={board.squares}
             handleClick={this.handleClick}
           />
         </div>
