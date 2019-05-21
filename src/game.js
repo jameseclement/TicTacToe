@@ -35,7 +35,6 @@ class Game extends Component {
     }
   };
 
-
   calculateWinner = squares => {
     const lines = [
       [0, 1, 2],
@@ -61,31 +60,9 @@ class Game extends Component {
   };
 
   render() {
-    return (
-      <div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
-      </div>
-    );
-  }
-}
-  render() {
     const history = this.state.history;
     const board = history[history.length - 1];
-    const winner = this.calculateWinner(this.board);
+    const winner = this.calculateWinner(board);
     let status;
     if (winner) {
       status = `${winner} is the Winner!`;
@@ -99,6 +76,7 @@ class Game extends Component {
             turn={this.state.turn}
             switch={this.switchTurn}
             board={board}
+            handleClick={this.handleClick}
           />
         </div>
         <div className="game-info">

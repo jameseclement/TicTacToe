@@ -11,7 +11,7 @@ class Board extends Component {
   renderSquare(i) {
     return (
       <Square
-        handleClick={() => this.handleClick(i)}
+        handleClick={() => this.props.handleClick(i)}
         value={this.state.squares[i]}
       />
     );
