@@ -62,7 +62,7 @@ class Game extends Component {
   render() {
     const history = this.state.history;
     const board = history[history.length - 1];
-    const winner = this.calculateWinner(board);
+    const winner = this.calculateWinner(board.squares);
     let status;
     if (winner) {
       status = `${winner} is the Winner!`;
