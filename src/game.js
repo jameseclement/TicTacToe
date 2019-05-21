@@ -27,7 +27,7 @@ class Game extends Component {
     if (this.calculateWinner(squares) || squares[i]) {
       return;
     } else {
-      squares[i] = this.props.turn;
+      squares[i] = this.state.turn;
       this.setState({
         history: [...history, { squares: squares }]
       });
@@ -67,7 +67,7 @@ class Game extends Component {
     if (winner) {
       status = `${winner} is the Winner!`;
     } else {
-      status = `Next player: ${this.props.turn}`;
+      status = `Next player: ${this.state.turn}`;
     }
     return (
       <div className="game">
