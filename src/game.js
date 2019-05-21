@@ -19,6 +19,19 @@ class Game extends Component {
       ? this.setState({ turn: "O" })
       : this.setState({ turn: "X" });
   };
+
+  handleClick = i => {
+    const squares = this.state.squares.slice();
+    if (this.calculateWinner(squares) || squares[i]) {
+      return;
+    } else {
+      squares[i] = this.props.turn;
+      this.setState({
+        squares: squares
+      });
+      this.props.switch();
+    }
+  };
   render() {
     const history = this.state.history;
     const board = history[history.length - 1];
