@@ -41,19 +41,6 @@ class Board extends Component {
     return null;
   };
 
-  handleClick = i => {
-    const squares = this.state.squares.slice();
-    if (this.calculateWinner(squares) || squares[i]) {
-      return;
-    } else {
-      squares[i] = this.props.turn;
-      this.setState({
-        squares: squares
-      });
-      this.props.switch();
-    }
-  };
-
   render() {
     return (
       <div>

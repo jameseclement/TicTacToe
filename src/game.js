@@ -21,7 +21,9 @@ class Game extends Component {
   };
 
   handleClick = i => {
-    const squares = this.state.squares.slice();
+    const history = this.state.history;
+    const board = history[history.length - 1];
+    const squares = board.squares.slice();
     if (this.calculateWinner(squares) || squares[i]) {
       return;
     } else {
