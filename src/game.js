@@ -75,7 +75,7 @@ class Game extends Component {
     const board = history[this.state.step];
     const winner = this.calculateWinner(board.squares);
     const moves = history.map((step, move) => {
-      const desc = move ? "Go to move #" + move : "Go to game start";
+      const desc = move ? "Go to move #" + move : "Blank Board";
       return (
         <li key={move}>
           <button onClick={() => this.jump(move)}>{desc}</button>
