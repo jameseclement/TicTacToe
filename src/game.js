@@ -72,7 +72,7 @@ class Game extends Component {
 
   render() {
     const history = this.state.history;
-    const board = history[history.length - 1];
+    const board = history[this.state.step];
     const winner = this.calculateWinner(board.squares);
     const moves = history.map((step, move) => {
       const desc = move ? "Go to move #" + move : "Go to game start";
