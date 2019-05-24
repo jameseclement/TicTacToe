@@ -60,6 +60,15 @@ class Game extends Component {
     return null;
   };
 
+  jump = step => {
+    let play;
+    step % 2 === 0 ? (play = "X") : (play = "O");
+    this.setState({
+      step: step,
+      turn: play
+    });
+  };
+
   render() {
     const history = this.state.history;
     const board = history[history.length - 1];
