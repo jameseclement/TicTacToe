@@ -10,7 +10,8 @@ class Game extends Component {
         {
           squares: [null, null, null, null, null, null, null, null, null]
         }
-      ]
+      ],
+      step: 0
     };
   }
 
