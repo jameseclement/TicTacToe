@@ -30,7 +30,8 @@ class Game extends Component {
     } else {
       squares[i] = this.state.turn;
       this.setState({
-        history: [...history, { squares: squares }]
+        history: [...history, { squares: squares }],
+        step: history.length
       });
       this.switchTurn();
     }
