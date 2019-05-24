@@ -22,7 +22,7 @@ class Game extends Component {
   };
 
   handleClick = i => {
-    const history = this.state.history;
+    const history = this.state.history.slice(0, this.state.step + 1);
     const board = history[history.length - 1];
     const squares = board.squares.slice();
     if (this.calculateWinner(squares) || squares[i]) {
@@ -70,7 +70,7 @@ class Game extends Component {
   };
 
   render() {
-    const history = this.state.history.slice(0, this.state.step + 1);
+    const history = this.state.history;
     const board = history[history.length - 1];
     const winner = this.calculateWinner(board.squares);
     const moves = history.map((step, move) => {
